@@ -1,7 +1,13 @@
 package com.hellokoding.jpa.model;
 
-import javax.persistence.*;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "book_category")
@@ -10,7 +16,7 @@ public class BookCategory {
     private String name;
     private Set<Book> books;
 
-    public BookCategory(){
+    public BookCategory() {
 
     }
 
@@ -19,7 +25,7 @@ public class BookCategory {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -48,13 +54,13 @@ public class BookCategory {
     @Override
     public String toString() {
         String result = String.format(
-                "Category[id=%d, name='%s']%n",
-                id, name);
+            "Category[id=%d, name='%s']%n",
+            id, name);
         if (books != null) {
-            for(Book book : books) {
+            for (Book book : books) {
                 result += String.format(
-                        "Book[id=%d, name='%s']%n",
-                        book.getId(), book.getName());
+                    "Book[id=%d, name='%s']%n",
+                    book.getId(), book.getName());
             }
         }
 

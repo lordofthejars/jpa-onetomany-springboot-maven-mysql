@@ -1,0 +1,27 @@
+book_category:
+
+  - id: 1
+    name: Category A
+  - id: 2
+    name: Category B
+
+book:
+
+  - id: 1
+    name: Book A1
+    book_category_id: 1
+  - id: 2
+    name: Book A2
+    book_category_id: 1
+  - id: 3
+    name: Book A3
+    book_category_id: 1
+  - id: 4
+    name: Book B1
+    book_category_id: 2
+  - id: 5
+    name: Book B2
+    book_category_id: 2
+  - id: 6
+    name: Book B3
+    book_category_id: 2
